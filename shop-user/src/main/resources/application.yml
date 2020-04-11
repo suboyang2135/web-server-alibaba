@@ -1,0 +1,22 @@
+server:
+  port: 8070
+
+spring:
+  application:
+    name: service-user
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://175.24.33.47:3306/shop?serverTimezon=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        dialect: org.hibernate.dialect.MySQL5InnerDBDialect
+  cloud:
+    nacos:
+      server-addr: 47.114.149.248:8848
+      discovery:
+        server-addr: ${spring.cloud.nacos.server-addr}
